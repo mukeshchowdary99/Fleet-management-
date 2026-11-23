@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-label="Safety illustration with a shield and vehicle health alerts">
+  <defs>
+    <linearGradient id="shield" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3267f6"/>
+      <stop offset="1" stop-color="#1b3eb0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="640" height="420" rx="22" fill="#f6f8fb"/>
+  <circle cx="545" cy="90" r="110" fill="#dce8ff" opacity="0.7"/>
+  <circle cx="90" cy="360" r="120" fill="#eef4ff"/>
+
+  <g transform="translate(250 40)">
+    <path d="M70 0 L140 28 V92 C140 145 105 181 70 196 C35 181 0 145 0 92 V28Z" fill="url(#shield)"/>
+    <path d="M70 18 L123 41 V91 C123 132 97 161 70 174 C43 161 17 132 17 91 V41Z" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.55"/>
+    <path d="M44 94 L62 112 L98 72" fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g transform="translate(34 90)" filter="drop-shadow(0 8px 14px rgba(15,23,42,0.10))">
+    <rect width="220" height="120" rx="14" fill="#ffffff"/>
+    <circle cx="28" cy="30" r="12" fill="#fee2e2"/>
+    <path d="M28 24 L28 32 M28 36 L28 37" stroke="#ef4444" stroke-width="3" stroke-linecap="round"/>
+    <rect x="50" y="23" width="116" height="9" rx="4" fill="#334155"/>
+    <rect x="20" y="56" width="180" height="8" rx="4" fill="#eef1f6"/>
+    <rect x="20" y="74" width="130" height="8" rx="4" fill="#eef1f6"/>
+    <rect x="20" y="94" width="78" height="14" rx="7" fill="#fee2e2"/>
+  </g>
+
+  <g transform="translate(388 226)" filter="drop-shadow(0 8px 14px rgba(15,23,42,0.10))">
+    <rect width="220" height="132" rx="14" fill="#ffffff"/>
+    <circle cx="28" cy="30" r="12" fill="#dcfce7"/>
+    <path d="M22 30 L27 35 L35 25" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="50" y="23" width="104" height="9" rx="4" fill="#334155"/>
+    <rect x="20" y="56" width="180" height="8" rx="4" fill="#eef1f6"/>
+    <rect x="20" y="74" width="150" height="8" rx="4" fill="#eef1f6"/>
+    <rect x="20" y="96" width="92" height="14" rx="7" fill="#dcfce7"/>
+  </g>
+
+  <g transform="translate(268 274)">
+    <rect width="104" height="70" rx="12" fill="#1f4edb"/>
+    <rect x="12" y="16" width="48" height="26" rx="5" fill="#8eb4ff"/>
+    <rect x="56" y="8" width="32" height="34" rx="5" fill="#598dff"/>
+    <circle cx="26" cy="50" r="9" fill="#0b1120"/>
+    <circle cx="26" cy="50" r="4" fill="#cbd5e1"/>
+    <circle cx="76" cy="50" r="9" fill="#0b1120"/>
+    <circle cx="76" cy="50" r="4" fill="#cbd5e1"/>
+  </g>
+
+  <g fill="#94a3b8">
+    <circle cx="62" cy="54" r="4"/>
+    <circle cx="590" cy="330" r="4"/>
+    <circle cx="566" cy="52" r="3"/>
+  </g>
+</svg>

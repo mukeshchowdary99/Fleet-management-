@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-label="Route tracking illustration with map pins and a vehicle route">
+  <defs>
+    <linearGradient id="map" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1120"/>
+      <stop offset="1" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#598dff"/>
+      <stop offset="1" stop-color="#8eb4ff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="640" height="420" rx="22" fill="url(#map)"/>
+  <g stroke="#334155" stroke-width="1" opacity="0.6">
+    <path d="M0 80 H640 M0 160 H640 M0 240 H640 M0 320 H640"/>
+    <path d="M80 0 V420 M180 0 V420 M280 0 V420 M380 0 V420 M480 0 V420 M580 0 V420"/>
+  </g>
+  <g stroke="#475569" stroke-width="10" stroke-linecap="round" opacity="0.55">
+    <path d="M40 330 L190 250 L300 280 L430 180 L600 120"/>
+    <path d="M130 30 L190 110 L190 250"/>
+  </g>
+
+  <path d="M80 320 C170 260 210 300 285 215 S420 170 520 90" fill="none" stroke="url(#line)" stroke-width="7" stroke-linecap="round"/>
+  <path d="M80 320 C170 260 210 300 285 215 S420 170 520 90" fill="none" stroke="#ffffff" stroke-width="2" stroke-dasharray="6 8" opacity="0.8"/>
+
+  <g>
+    <path d="M80 320 C170 260 210 300 285 215 S420 170 520 90" fill="none" stroke="#3267f6" stroke-width="22" stroke-linecap="round" opacity="0.12"/>
+  </g>
+
+  <g transform="translate(64 300)">
+    <circle cx="16" cy="16" r="16" fill="#16a34a" stroke="#ffffff" stroke-width="4"/>
+    <circle cx="16" cy="16" r="5" fill="#ffffff"/>
+  </g>
+  <g transform="translate(504 74)">
+    <path d="M16 0 C7 0 0 7 0 16 C0 28 16 40 16 40 S32 28 32 16 C32 7 25 0 16 0Z" fill="#f59e0b" stroke="#ffffff" stroke-width="3"/>
+    <circle cx="16" cy="16" r="5" fill="#ffffff"/>
+  </g>
+
+  <g transform="translate(386 210)" filter="drop-shadow(0 8px 14px rgba(0,0,0,0.35))">
+    <rect width="194" height="104" rx="14" fill="#ffffff"/>
+    <rect x="16" y="16" width="44" height="44" rx="10" fill="#eef4ff"/>
+    <path d="M24 48 L30 30 H46 L52 48Z" fill="#3267f6"/>
+    <rect x="29" y="33" width="14" height="9" rx="2" fill="#dce8ff"/>
+    <circle cx="31" cy="51" r="4" fill="#0f172a"/>
+    <circle cx="47" cy="51" r="4" fill="#0f172a"/>
+    <rect x="72" y="18" width="100" height="10" rx="5" fill="#0f172a"/>
+    <rect x="72" y="36" width="72" height="8" rx="4" fill="#cbd5e1"/>
+    <rect x="72" y="56" width="100" height="8" rx="4" fill="#eef1f6"/>
+    <rect x="16" y="76" width="162" height="14" rx="7" fill="#eef4ff"/>
+    <rect x="16" y="76" width="104" height="14" rx="7" fill="#3267f6" opacity="0.85"/>
+  </g>
+
+  <g transform="translate(28 28)">
+    <rect width="132" height="38" rx="10" fill="#ffffff" opacity="0.1"/>
+    <circle cx="20" cy="19" r="5" fill="#16a34a"/>
+    <rect x="34" y="15" width="80" height="8" rx="4" fill="#cbd5e1" opacity="0.8"/>
+  </g>
+</svg>
