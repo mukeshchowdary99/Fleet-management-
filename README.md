@@ -160,11 +160,27 @@ RPCs:
 - `vehicle_events.trip_id` references `trips.id` for trip lifecycle events.
 - `vehicle_events.acknowledged_by` references `profiles.id`.
 
-### 5. Authentication 
+### 5. Authentication setup
 
-username: fleetmgmt@gmail.com
-password: Fleet123@
+1. In Supabase, go to **Authentication → Providers → Email** and ensure Email sign-in is enabled.
+2. For a quick demo, disable **Confirm email**, or confirm the user after creating it.
+3. Go to **Authentication → Users → Add user → Create user**.
+4. Enter an email and password and create the user.
+5. The `handle_new_user` trigger creates the matching `profiles` row.
+6. Sign in at `/login`. Protected routes then redirect to `/dashboard`.
 
+If a user was created before the migration, create its profile with:
+
+```sql
+insert into public.profiles (id, full_name, role)
+select id, coalesce(raw_user_meta_data->>'full_name', split_part(email, '@', 1)), 'viewer'
+from auth.users
+on conflict (id) do nothing;
+```
+
+RLS allows authenticated users to read the operational tables. Browser writes are limited to the two RPCs above. No `service_role` key is used.
+
+## Technical Decisions
 
 ### Data-model decisions
 
