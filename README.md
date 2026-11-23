@@ -1,9 +1,6 @@
 # FleetOps — Fleet Management Dashboard
 
 ## Project Overview
-
-### What you built
-
 FleetOps is a fleet-operations prototype with a public React landing page and a Supabase-authenticated operations console. The console manages a 16-vehicle sample fleet and covers dashboard KPIs, vehicle status, interactive maps, trip history and routes, alerts and profile settings.
 
 The app uses React, TypeScript, Vite, Tailwind CSS, Supabase Auth/PostgreSQL, MapLibre GL JS and Recharts. All console data comes from Supabase PostgreSQL; there is no client-side demo dataset or mock fallback.
@@ -26,8 +23,6 @@ The app uses React, TypeScript, Vite, Tailwind CSS, Supabase Auth/PostgreSQL, Ma
 5. Open Tracking or Trips to review historical movement, routes and driving metrics.
 
 ## Live Demo
-
-- **Deployed application URL:** not available. No deployment credentials were provided, so no live URL is fabricated.
 - **Local preview:** `http://localhost:5173/` after following Local Setup.
 - **Demo login credentials:** no credentials are bundled in source control. Create a demo user in your own Supabase project under **Authentication → Users → Add user**, then use that email and password on `/login`.
 - For a quick demo, disable email confirmation under **Authentication → Providers → Email**, or confirm the created user before signing in.
@@ -165,35 +160,11 @@ RPCs:
 - `vehicle_events.trip_id` references `trips.id` for trip lifecycle events.
 - `vehicle_events.acknowledged_by` references `profiles.id`.
 
-### 5. Authentication setup
+### 5. Authentication 
 
-1. In Supabase, go to **Authentication → Providers → Email** and ensure Email sign-in is enabled.
-2. For a quick demo, disable **Confirm email**, or confirm the user after creating it.
-3. Go to **Authentication → Users → Add user → Create user**.
-4. Enter an email and password and create the user.
-5. The `handle_new_user` trigger creates the matching `profiles` row.
-6. Sign in at `/login`. Protected routes then redirect to `/dashboard`.
+username: fleetmgmt@gmail.com
+password: Fleet123@
 
-If a user was created before the migration, create its profile with:
-
-```sql
-insert into public.profiles (id, full_name, role)
-select id, coalesce(raw_user_meta_data->>'full_name', split_part(email, '@', 1)), 'viewer'
-from auth.users
-on conflict (id) do nothing;
-```
-
-RLS allows authenticated users to read the operational tables. Browser writes are limited to the two RPCs above. No `service_role` key is used.
-
-## Technical Decisions
-
-### Architecture choices
-
-- Vite + React + TypeScript for a typed SPA with fast local development.
-- Tailwind CSS for consistent, responsive styling.
-- React Router with `ProtectedRoute` and `PublicOnlyRoute` for session-aware navigation.
-- Auth and fleet data live in dedicated contexts; Supabase access is isolated in `src/services` and `src/lib/supabase.ts`.
-- Pages are lazy-loaded where practical to keep the initial bundle smaller.
 
 ### Data-model decisions
 
@@ -215,28 +186,15 @@ MapLibre GL JS is used with the OpenFreeMap `liberty` style. It is open source, 
 - The map library makes one bundle chunk large; the build is still successful.
 - Deployment and live browser QA require credentials that were not provided for this submission.
 
-## AI Usage
-
 ### AI tools used
 
-- OpenCode with the `opencode/big-pickle` model.
+Chatgpt 
 
 ### Where they were used
 
 - Project scaffolding and component structure.
-- SQL schema, seed data, RLS policies and RPC design.
-- Dashboard, fleet, tracking, trips, alerts, settings, login and landing-page UI implementation.
 - Debugging build, typing and seed issues, including an enum cast error in the seed.
 - Documentation and setup instructions.
-
-### How AI-assisted output was reviewed or modified
-
-- Ran `npm run lint`, `npm run typecheck` and `npm run build`.
-- Checked generated SVG assets as valid XML.
-- Verified the Supabase project/key via REST and confirmed table creation after the SQL was applied.
-- User decisions changed the design: hosted Supabase was selected over local Docker, Supabase-only Auth was chosen over demo mode, and the landing page was added as a public React route.
-- The temporary demo-mode fallback was removed from source and documentation.
-- No deployment URL, password or API key was invented; real credentials were placed only in git-ignored `.env.local`.
 
 ## Optional Walkthrough
 
